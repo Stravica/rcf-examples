@@ -1,0 +1,31 @@
+{
+  "usId": "US-102",
+  "prdId": "PRD-100",
+  "reqId": "REQ-102",
+  "version": "1.0.0",
+  "status": "approved",
+  "title": "Search the entire corpus",
+  "asA": "user with a large note corpus",
+  "iWant": "to search across all my notes by free text",
+  "soThat": "I can find an old note even when I don't remember where I filed it",
+  "acceptanceCriteria": [
+    {
+      "id": "AC-102-1",
+      "description": "Search returns relevant notes for a free-text query",
+      "given": "the corpus contains 10000 notes",
+      "when": "the user submits a query",
+      "then": "the top 10 results return within 10 seconds with the match highlighted",
+      "testable": true
+    },
+    {
+      "id": "AC-102-2",
+      "description": "Empty query yields the recent-notes list",
+      "given": "the search input is empty",
+      "when": "the user opens the search surface",
+      "then": "the most recently edited 20 notes are listed",
+      "testable": true
+    }
+  ],
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-04-10T08:00:00Z"
+}

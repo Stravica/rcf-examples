@@ -1,0 +1,17 @@
+{
+  "adrId": "ADR-102",
+  "prdId": "PRD-100",
+  "tadId": "TAD-100",
+  "version": "2.0.0",
+  "status": "superseded",
+  "title": "Initial FTS approach (custom inverted index in R2)",
+  "context": "We considered building a custom inverted index served from R2 to avoid taking on a relational store.",
+  "decision": "Initially: build a Lucene-style index manually, sharded by user id, stored as JSON in R2.",
+  "consequences": "Avoids a new datastore; pushes index maintenance complexity into the Worker; cold queries get expensive on a large corpus.",
+  "alternativesConsidered": [
+    { "name": "D1 FTS5", "summary": "SQLite FTS5 hosted on Cloudflare D1.", "reasonNotChosen": "At the time, D1 was beta and not deemed production-ready." }
+  ],
+  "supersededBy": "ADR-103",
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-05-01T12:00:00Z"
+}

@@ -1,0 +1,13 @@
+{
+  "reqId": "REQ-001",
+  "prdId": "PRD-001",
+  "title": "Persist a note locally",
+  "description": "The system must accept a note from the user and persist it across page reloads.",
+  "category": "functional",
+  "domain": "capture",
+  "priority": "must",
+  "version": "0.1.0",
+  "status": "draft",
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-01-01T00:00:00Z"
+}

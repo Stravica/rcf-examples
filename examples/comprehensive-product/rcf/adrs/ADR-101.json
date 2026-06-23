@@ -1,0 +1,18 @@
+{
+  "adrId": "ADR-101",
+  "prdId": "PRD-100",
+  "tadId": "TAD-100",
+  "version": "1.0.0",
+  "status": "accepted",
+  "title": "Cloudflare R2 as authoritative blob store",
+  "context": "We need a low-cost, low-ops blob backend with strong consistency on PUT-if-match.",
+  "decision": "Adopt Cloudflare R2 as the authoritative store for note bodies.",
+  "consequences": "Per-Worker latency is excellent; egress is free within the Cloudflare ecosystem. Lock-in to Cloudflare for the storage tier; mitigated by S3-compatible API.",
+  "alternativesConsidered": [
+    { "name": "AWS S3", "summary": "Industry standard.", "reasonNotChosen": "Egress cost rules out edge-cache invalidation patterns we want." },
+    { "name": "Backblaze B2", "summary": "Comparable price/perf.", "reasonNotChosen": "No CDN integration matching our edge-runtime story." }
+  ],
+  "relatedAdrs": ["ADR-100"],
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-05-01T12:00:00Z"
+}

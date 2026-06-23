@@ -1,0 +1,32 @@
+{
+  "usId": "US-100",
+  "prdId": "PRD-100",
+  "reqId": "REQ-100",
+  "version": "1.0.0",
+  "status": "approved",
+  "title": "Create and save a markdown note",
+  "description": "Cover the create + save + reopen path end to end.",
+  "asA": "user",
+  "iWant": "to write a markdown note and save it",
+  "soThat": "I can come back to it later from any of my devices",
+  "acceptanceCriteria": [
+    {
+      "id": "AC-100-1",
+      "description": "Submitting a new note persists it locally",
+      "given": "the editor is open with new content",
+      "when": "the user saves",
+      "then": "the note appears in the local note list and is rendered when reopened",
+      "testable": true
+    },
+    {
+      "id": "AC-100-2",
+      "description": "Markdown formatting is preserved verbatim on save",
+      "given": "the note contains headings, lists, links, and code blocks",
+      "when": "the user saves and reopens the note",
+      "then": "every markdown construct is preserved byte-for-byte",
+      "testable": true
+    }
+  ],
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-04-10T08:00:00Z"
+}

@@ -1,0 +1,11 @@
+{
+  "fbsId": "FBS-001",
+  "prdId": "PRD-001",
+  "bsId": "BS-001",
+  "title": "Build the single-page note app",
+  "summary": "HTML form, in-page editor, localStorage persistence on submit.",
+  "acIds": ["AC-001"],
+  "status": "notStarted",
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-01-01T00:00:00Z"
+}

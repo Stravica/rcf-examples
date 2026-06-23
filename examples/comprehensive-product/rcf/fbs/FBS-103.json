@@ -1,0 +1,33 @@
+{
+  "fbsId": "FBS-103",
+  "prdId": "PRD-100",
+  "bsId": "BS-100",
+  "title": "Full-text search endpoint on D1",
+  "summary": "GET /search backed by Cloudflare D1 FTS5 over the user's note corpus.",
+  "approach": "D1 FTS5 virtual table populated by an ingest worker subscribed to sync events; query handler returns paged results with snippet highlighting.",
+  "acIds": ["AC-102-1", "AC-102-2"],
+  "status": "notStarted",
+  "contextRequirements": {
+    "prdSections": ["search"],
+    "tadSections": ["dataArchitecture", "integrationArchitecture"],
+    "tacIds": ["TAC-102"],
+    "adrIds": ["ADR-103"],
+    "schemas": [],
+    "externalDocs": ["https://www.sqlite.org/fts5.html", "https://developers.cloudflare.com/d1/"],
+    "other": ["Coordinate with the ADR-102 -> ADR-103 migration."]
+  },
+  "dependencies": ["FBS-101"],
+  "estimatedSize": "large",
+  "estimatedHours": 12,
+  "deliverables": [
+    "GET /search handler",
+    "Ingest worker subscribed to /sync/push events",
+    "Migration script from R2 index to D1 FTS5",
+    "Load test against 10000-note corpus"
+  ],
+  "riskLevel": "high",
+  "domain": "search",
+  "notes": "Pre-launch: load-test with a real corpus shape, not synthetic.",
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-05-01T12:00:00Z"
+}
