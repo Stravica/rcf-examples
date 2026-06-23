@@ -8,8 +8,8 @@ Synthetic-but-realistic fictional product RCF document trees for the [Requiremen
 
 Two complete RCF trees under `examples/`:
 
-- **`minimal-product/`** — smallest viable RCF tree. Only required fields populated. Demonstrates the floor.
-- **`comprehensive-product/`** — every optional field populated across every schema. Demonstrates the ceiling.
+- **`minimal-product/`** - smallest viable RCF tree. Only required fields populated. Demonstrates the floor.
+- **`comprehensive-product/`** - every optional field populated across every schema. Demonstrates the ceiling.
 
 Both trees use the recommended `rcf/` folder layout from `@stravica/rcf-schemas/docs/file-layout.md`, with Test Suite files OUTSIDE `rcf/` (code-adjacent), to prove the pattern.
 
