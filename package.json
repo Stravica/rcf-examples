@@ -1,6 +1,6 @@
 {
   "name": "@stravica/rcf-examples",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "description": "Synthetic-but-realistic fictional product RCF trees. Schema stress-test target during Phase 1; adopter gallery post-publish.",
@@ -14,5 +14,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Stravica/rcf-examples.git"
+  },
+  "homepage": "https://github.com/Stravica/rcf-examples",
+  "bugs": {
+    "url": "https://github.com/Stravica/rcf-examples/issues"
   }
 }

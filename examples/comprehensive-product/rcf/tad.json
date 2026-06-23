@@ -1,0 +1,81 @@
+{
+  "tadId": "TAD-100",
+  "prdId": "PRD-100",
+  "version": "1.0.0",
+  "status": "approved",
+  "systemOverview": {
+    "executiveSummary": "Markdown-first notebook with a thin sync layer over object storage, browser-resident editor, edge-cached read APIs, and a server-side full-text index.",
+    "systemPurpose": "Capture and retrieve personal notes across devices with offline-first behaviour.",
+    "architecturalApproach": "Local-first PWA with CRDT-based sync to a serverless backend; the search index is a server-side concern fed by the sync layer.",
+    "keyCapabilities": [
+      "Offline editing",
+      "Conflict resolution",
+      "Wiki-style linking",
+      "Full-text search"
+    ]
+  },
+  "componentIds": ["TAC-100", "TAC-101", "TAC-102"],
+  "architecturalDecisionIds": ["ADR-100", "ADR-101", "ADR-102", "ADR-103"],
+  "architecturePrinciples": [
+    {
+      "name": "Local-first",
+      "description": "Every read and write succeeds offline; sync is a background concern.",
+      "rationale": "Users expect zero-latency local operation; network is unreliable."
+    },
+    {
+      "name": "Small surface",
+      "description": "Public APIs are small, versioned, and stable.",
+      "rationale": "Long-lived clients cannot churn on every backend change."
+    },
+    {
+      "name": "Open data",
+      "description": "Notes are markdown; the canonical export is a flat directory of .md files.",
+      "rationale": "Lock-in is hostile to the user."
+    }
+  ],
+  "dataArchitecture": {
+    "dataStores": [
+      { "name": "IndexedDB (browser)", "kind": "embedded kv", "purpose": "Local note store and pending-sync queue" },
+      { "name": "Object storage (R2)", "kind": "blob store", "purpose": "Authoritative remote storage" },
+      { "name": "FTS index (D1)", "kind": "relational", "purpose": "Server-side full-text index" }
+    ],
+    "coreEntities": [
+      { "name": "Note", "description": "Markdown document with id, title, body, timestamps." },
+      { "name": "Link", "description": "Directed edge between two notes." },
+      { "name": "SyncDelta", "description": "Versioned change to a note, keyed by client id." }
+    ],
+    "dataFlow": "Edits land in IndexedDB; background worker pushes deltas to R2 when online; sync worker fans out to the FTS index.",
+    "retention": "Indefinite; user-initiated delete only."
+  },
+  "integrationArchitecture": {
+    "apiDesign": "REST + JSON over HTTPS; idempotent writes keyed by client-generated UUID; ETags on read.",
+    "externalSystems": [
+      { "name": "Cloudflare R2", "purpose": "Authoritative blob store", "protocol": "HTTPS S3-compatible" },
+      { "name": "Cloudflare D1", "purpose": "Full-text index", "protocol": "HTTPS Workers SQL binding" }
+    ],
+    "eventModel": "Push notifications via WebPush for cross-device change signalling."
+  },
+  "securityArchitecture": {
+    "authenticationPattern": "Passwordless email magic link with rotating signed token.",
+    "authorizationModel": "User-scoped; all data is private to the authenticated user.",
+    "secretsManagement": "Cloudflare Workers Secrets; no plaintext in code.",
+    "threatModel": "STRIDE; primary concerns are token theft and replay.",
+    "complianceRequirements": ["GDPR data export and delete"]
+  },
+  "deploymentArchitecture": {
+    "targetEnvironment": "Cloudflare Pages + Workers + R2 + D1.",
+    "topology": "Edge-distributed; no origin region.",
+    "scaling": "Automatic per Cloudflare runtime.",
+    "cicd": "GitHub Actions; preview deploys per PR."
+  },
+  "operationalConcerns": {
+    "healthChecks": "Synthetic edge probe per region every 60 seconds.",
+    "logging": "Structured JSON logs shipped to Logflare.",
+    "metrics": "p50/p95 latency per Worker route; cache hit ratio per edge POP; FTS query time.",
+    "alerting": "PagerDuty on probe failure or error rate > 1%.",
+    "backup": "R2 versioning enabled with 30-day retention; D1 daily snapshot to R2.",
+    "disasterRecovery": "Restore from R2 versioning; RPO 1 hour, RTO 4 hours."
+  },
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-05-01T12:00:00Z"
+}

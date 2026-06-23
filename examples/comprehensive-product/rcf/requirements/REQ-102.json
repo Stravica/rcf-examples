@@ -1,0 +1,15 @@
+{
+  "reqId": "REQ-102",
+  "prdId": "PRD-100",
+  "title": "Full-text search across the corpus",
+  "description": "The user must be able to search the entire corpus of notes by free text and recover relevant notes within 10 seconds on a 10000-note corpus.",
+  "category": "functional",
+  "domain": "search",
+  "priority": "should",
+  "rationale": "Retrieval is the second job-to-be-done after capture; without it, the corpus is write-only.",
+  "tags": ["search", "retrieval"],
+  "version": "1.0.0",
+  "status": "approved",
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-04-10T08:00:00Z"
+}

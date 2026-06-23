@@ -1,0 +1,15 @@
+{
+  "reqId": "REQ-100",
+  "prdId": "PRD-100",
+  "title": "Markdown capture and persistence",
+  "description": "The system must let a user write a markdown note and persist it across sessions and devices.",
+  "category": "functional",
+  "domain": "capture",
+  "priority": "must",
+  "rationale": "Without persistent markdown, the product does not exist. Foundation requirement.",
+  "tags": ["capture", "markdown", "persistence"],
+  "version": "1.0.0",
+  "status": "approved",
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-04-10T08:00:00Z"
+}

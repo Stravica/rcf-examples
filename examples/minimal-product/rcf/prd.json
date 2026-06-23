@@ -1,0 +1,13 @@
+{
+  "prdId": "PRD-001",
+  "productName": "Minimal Notebook",
+  "version": "0.1.0",
+  "status": "draft",
+  "problemStatement": "Users want a no-frills note-taking surface that stores plain text locally.",
+  "objectives": [
+    "Capture notes in under a second."
+  ],
+  "requirementIds": ["REQ-001"],
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-01-01T00:00:00Z"
+}

@@ -1,0 +1,23 @@
+{
+  "tacId": "TAC-101",
+  "prdId": "PRD-100",
+  "tadId": "TAD-100",
+  "version": "1.0.0",
+  "status": "approved",
+  "name": "Object Store Adapter",
+  "purpose": "Thin domain layer over Cloudflare R2 for note persistence.",
+  "responsibilities": [
+    "Translate Note domain objects to and from R2 blobs",
+    "Manage versioning via R2 PUT-if-match"
+  ],
+  "internalStructure": "Adapter module with a single R2 client; pure functions for serialise / deserialise.",
+  "interfaces": [
+    { "name": "putNote(note, expectedETag)", "kind": "internal-function", "description": "Writes a note with optimistic concurrency." },
+    { "name": "getNote(id)", "kind": "internal-function", "description": "Reads the latest version of a note." }
+  ],
+  "dependencies": [
+    { "name": "Cloudflare R2", "kind": "external", "description": "Underlying blob store." }
+  ],
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-05-01T12:00:00Z"
+}

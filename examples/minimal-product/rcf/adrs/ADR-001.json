@@ -1,0 +1,13 @@
+{
+  "adrId": "ADR-001",
+  "prdId": "PRD-001",
+  "tadId": "TAD-001",
+  "version": "0.1.0",
+  "status": "accepted",
+  "title": "Use localStorage for v0.1",
+  "context": "Minimum-viable scope: a single device, no sync, no remote backend.",
+  "decision": "Persist notes via localStorage.",
+  "consequences": "Zero backend cost. No cross-device sync. Storage cap ~5 MB per origin.",
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-01-01T00:00:00Z"
+}

@@ -1,0 +1,17 @@
+{
+  "acId": "AC-101-3",
+  "usId": "US-101",
+  "prdId": "PRD-100",
+  "version": "1.0.0",
+  "title": "Conflict surfaced when remote diverges from local",
+  "testCases": [
+    {
+      "id": "TC-220",
+      "given": "the same note was edited locally offline and on another device while offline",
+      "when": "both devices reconnect and sync runs",
+      "then": "the conflict resolution UI is shown with both versions visible and the user can pick or merge"
+    }
+  ],
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-04-20T08:00:00Z"
+}

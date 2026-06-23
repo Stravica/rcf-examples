@@ -1,0 +1,17 @@
+{
+  "acId": "AC-102-2",
+  "usId": "US-102",
+  "prdId": "PRD-100",
+  "version": "1.0.0",
+  "title": "Empty query yields the recent-notes list",
+  "testCases": [
+    {
+      "id": "TC-310",
+      "given": "the search input is empty",
+      "when": "the user opens the search surface",
+      "then": "the 20 most recently edited notes are listed in descending updatedAt order"
+    }
+  ],
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-05-01T12:00:00Z"
+}

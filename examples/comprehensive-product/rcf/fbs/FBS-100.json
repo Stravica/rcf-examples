@@ -1,0 +1,30 @@
+{
+  "fbsId": "FBS-100",
+  "prdId": "PRD-100",
+  "bsId": "BS-100",
+  "title": "Local note store and editor",
+  "summary": "IndexedDB-backed Note store and the in-browser editor that reads / writes it.",
+  "approach": "Plain web components on top of a thin Promise-wrapped IndexedDB layer. No backend.",
+  "acIds": ["AC-100-1", "AC-100-2"],
+  "status": "verified",
+  "contextRequirements": {
+    "prdSections": ["capture", "openData"],
+    "tadSections": ["dataArchitecture"],
+    "existingModules": [],
+    "schemas": [],
+    "externalDocs": ["https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API"],
+    "other": []
+  },
+  "estimatedSize": "medium",
+  "estimatedHours": 6,
+  "deliverables": [
+    "src/store/indexedDb.js",
+    "src/editor/index.js",
+    "Unit tests for store"
+  ],
+  "riskLevel": "low",
+  "domain": "capture",
+  "notes": "Foundation FBS; everything else builds on this.",
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-02-01T08:00:00Z"
+}

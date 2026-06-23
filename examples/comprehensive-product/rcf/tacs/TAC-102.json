@@ -1,0 +1,25 @@
+{
+  "tacId": "TAC-102",
+  "prdId": "PRD-100",
+  "tadId": "TAD-100",
+  "version": "1.0.0",
+  "status": "approved",
+  "name": "FTS Index",
+  "purpose": "Server-side full-text index over the note corpus, hosted on Cloudflare D1.",
+  "responsibilities": [
+    "Maintain an FTS5 index of note bodies and titles",
+    "Serve search queries with paged results",
+    "Re-index notes on change notifications from the Sync Worker"
+  ],
+  "internalStructure": "D1 schema with notes_fts virtual table; ingest worker subscribes to sync events.",
+  "interfaces": [
+    { "name": "GET /search", "kind": "http-json", "description": "Returns paged search results for a free-text query." }
+  ],
+  "dependencies": [
+    { "name": "Sync Worker", "kind": "tac", "tacId": "TAC-100", "description": "Source of change notifications." },
+    { "name": "Cloudflare D1", "kind": "external", "description": "Underlying SQLite-compatible store." }
+  ],
+  "tradeoffs": "D1 FTS5 is good enough for the target corpus size; we accept the lack of multi-language stemming in v1.",
+  "createdAt": "2026-01-01T00:00:00Z",
+  "updatedAt": "2026-05-01T12:00:00Z"
+}

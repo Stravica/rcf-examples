@@ -1,0 +1,18 @@
+{
+  "adrId": "ADR-103",
+  "prdId": "PRD-100",
+  "tadId": "TAD-100",
+  "version": "1.0.0",
+  "status": "accepted",
+  "title": "Adopt Cloudflare D1 FTS5 for full-text search",
+  "context": "D1 left beta with FTS5 support and per-Worker query latency that beat our hand-rolled R2-served index. Maintenance burden of the custom index has been higher than expected.",
+  "decision": "Migrate the FTS index from the custom R2-served implementation (ADR-102) to D1 FTS5.",
+  "consequences": "Removes a class of cold-query latency issues. Adds a new datastore (D1) to the operational surface. Migration is a one-off rebuild from R2 note bodies.",
+  "alternativesConsidered": [
+    { "name": "Algolia", "summary": "Managed search SaaS.", "reasonNotChosen": "Cost ceiling and a new third-party dependency." },
+    { "name": "Continue with the custom R2 index", "summary": "Keep current implementation, optimise.", "reasonNotChosen": "Maintenance burden does not match team capacity." }
+  ],
+  "relatedAdrs": ["ADR-102", "ADR-101"],
+  "createdAt": "2026-03-01T00:00:00Z",
+  "updatedAt": "2026-05-01T12:00:00Z"
+}
