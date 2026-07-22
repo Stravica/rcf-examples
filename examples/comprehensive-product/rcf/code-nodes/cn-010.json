@@ -1,0 +1,12 @@
+{
+  "cnId": "CN-010",
+  "path": "src/lib/id.js",
+  "title": "Shared id generation utility (file-level, orphan)",
+  "description": "Dependency-free id helper shared across store, sync, and search. Anchors to no acceptance criterion of its own - a deliberate example of a legitimate orphan Code Node (empty implementsAcIds), and of file-level granularity alongside the symbol-level nodes.",
+  "implementsAcIds": [],
+  "dependencies": [],
+  "version": "1.0.0",
+  "status": "approved",
+  "createdAt": "2026-05-02T09:00:00.000Z",
+  "updatedAt": "2026-05-02T09:00:00.000Z"
+}

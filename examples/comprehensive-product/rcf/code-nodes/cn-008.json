@@ -1,0 +1,12 @@
+{
+  "cnId": "CN-008",
+  "path": "src/search/search-index.js#indexNote",
+  "title": "Inverted-index note ingestion",
+  "description": "Adds or replaces a note in the in-memory inverted index, dropping stale postings first so an edited note never leaves dead terms behind. Feeds the query path.",
+  "implementsAcIds": ["AC-102-1"],
+  "dependencies": [],
+  "version": "1.0.0",
+  "status": "approved",
+  "createdAt": "2026-05-02T09:00:00.000Z",
+  "updatedAt": "2026-05-02T09:00:00.000Z"
+}

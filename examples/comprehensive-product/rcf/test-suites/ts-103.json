@@ -1,0 +1,20 @@
+{
+  "id": "TS-103",
+  "usId": "US-100",
+  "title": "Save-and-reopen round trip (e2e)",
+  "purpose": "A browser-level end-to-end suite over the same user story as TS-100, demonstrating that one US legitimately carries multiple suites at different test levels.",
+  "testLevel": "e2e",
+  "acIds": ["AC-100-1"],
+  "testCases": [
+    {
+      "id": "TC-103-save-reopen-survives-reload",
+      "acId": "AC-100-1",
+      "description": "Typing content, clicking Save, and reloading the page reopens the note with identical content.",
+      "testPointer": "test/e2e/save-reopen.spec.js::note survives a full page reload",
+      "status": "pending"
+    }
+  ],
+  "status": "approved",
+  "createdAt": "2026-05-02T09:00:00.000Z",
+  "updatedAt": "2026-05-02T09:00:00.000Z"
+}

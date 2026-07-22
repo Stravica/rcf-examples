@@ -1,0 +1,12 @@
+{
+  "cnId": "CN-004",
+  "path": "src/notes/markdown-document.js#parse",
+  "title": "Lossless markdown parse (reopen path)",
+  "description": "Inverse of serialize; loads a stored note back into the editor unchanged, completing the byte-for-byte round trip on reopen.",
+  "implementsAcIds": ["AC-100-2"],
+  "dependencies": ["CN-003"],
+  "version": "1.0.0",
+  "status": "approved",
+  "createdAt": "2026-05-02T09:00:00.000Z",
+  "updatedAt": "2026-05-02T09:00:00.000Z"
+}

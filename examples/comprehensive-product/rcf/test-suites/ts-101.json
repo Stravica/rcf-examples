@@ -1,0 +1,34 @@
+{
+  "id": "TS-101",
+  "usId": "US-101",
+  "title": "Offline edit and reconnect sync (integration)",
+  "purpose": "Exercise the sync engine and conflict resolver together across the offline-edit, reconnect-flush, and divergent-edit paths.",
+  "testLevel": "integration",
+  "acIds": ["AC-101-1", "AC-101-2", "AC-101-3"],
+  "testCases": [
+    {
+      "id": "TC-101-offline-edit-persists",
+      "acId": "AC-101-1",
+      "description": "An edit made while offline is stored locally and marked dirty for the next flush.",
+      "testPointer": "test/sync/sync-engine.test.js::transport failure leaves edits pending, does not throw",
+      "status": "passing"
+    },
+    {
+      "id": "TC-101-reconnect-flushes",
+      "acId": "AC-101-2",
+      "description": "On reconnect, pending dirty notes are pushed and the remote acknowledges them.",
+      "testPointer": "test/sync/sync-engine.test.js::reconnect pushes pending offline edits",
+      "status": "passing"
+    },
+    {
+      "id": "TC-101-conflict-surfaced",
+      "acId": "AC-101-3",
+      "description": "A note edited on both sides produces a conflict carrying both versions rather than a silent overwrite.",
+      "testPointer": "test/sync/sync-engine.test.js::divergent edit on both sides surfaces a conflict",
+      "status": "passing"
+    }
+  ],
+  "status": "approved",
+  "createdAt": "2026-05-02T09:00:00.000Z",
+  "updatedAt": "2026-05-02T09:00:00.000Z"
+}

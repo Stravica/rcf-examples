@@ -1,0 +1,12 @@
+{
+  "cnId": "CN-006",
+  "path": "src/sync/sync-engine.js#pullChanges",
+  "title": "Pull and merge remote changes",
+  "description": "Fetches remote changes since the last watermark and merges them locally, routing any note edited on both sides to the conflict resolver instead of overwriting.",
+  "implementsAcIds": ["AC-101-2", "AC-101-3"],
+  "dependencies": ["CN-005", "CN-007"],
+  "version": "1.0.0",
+  "status": "approved",
+  "createdAt": "2026-05-02T09:00:00.000Z",
+  "updatedAt": "2026-05-02T09:00:00.000Z"
+}

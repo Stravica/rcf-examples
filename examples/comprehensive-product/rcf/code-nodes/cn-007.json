@@ -1,0 +1,12 @@
+{
+  "cnId": "CN-007",
+  "path": "src/sync/conflict-resolver.js#resolveConflict",
+  "title": "Divergent-edit conflict detection",
+  "description": "Decides local/remote outcomes: fast-forwards when one side is unchanged, and reports a conflict carrying both versions when both diverged so the UI can surface it.",
+  "implementsAcIds": ["AC-101-3"],
+  "dependencies": [],
+  "version": "1.0.0",
+  "status": "approved",
+  "createdAt": "2026-05-02T09:00:00.000Z",
+  "updatedAt": "2026-05-02T09:00:00.000Z"
+}

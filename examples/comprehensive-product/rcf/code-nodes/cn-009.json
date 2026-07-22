@@ -1,0 +1,12 @@
+{
+  "cnId": "CN-009",
+  "path": "src/search/search-index.js#query",
+  "title": "Ranked full-text query with empty-query fallback",
+  "description": "Scores the corpus by term frequency and returns the top matches for a free-text query; an empty query returns the recent-notes list instead of erroring.",
+  "implementsAcIds": ["AC-102-1", "AC-102-2"],
+  "dependencies": ["CN-008"],
+  "version": "1.0.0",
+  "status": "approved",
+  "createdAt": "2026-05-02T09:00:00.000Z",
+  "updatedAt": "2026-05-02T09:00:00.000Z"
+}
