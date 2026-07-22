@@ -5,8 +5,10 @@
   "title": "Full-text search endpoint on D1",
   "summary": "GET /search backed by Cloudflare D1 FTS5 over the user's note corpus.",
   "approach": "D1 FTS5 virtual table populated by an ingest worker subscribed to sync events; query handler returns paged results with snippet highlighting.",
+  "buildOrder": 4,
+  "executionStatus": "notStarted",
   "acIds": ["AC-102-1", "AC-102-2"],
-  "status": "notStarted",
+  "dependsOnFbsIds": ["FBS-101"],
   "contextRequirements": {
     "prdSections": ["search"],
     "tadSections": ["dataArchitecture", "integrationArchitecture"],
@@ -16,7 +18,6 @@
     "externalDocs": ["https://www.sqlite.org/fts5.html", "https://developers.cloudflare.com/d1/"],
     "other": ["Coordinate with the ADR-102 -> ADR-103 migration."]
   },
-  "dependencies": ["FBS-101"],
   "estimatedSize": "large",
   "estimatedHours": 12,
   "deliverables": [

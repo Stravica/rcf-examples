@@ -5,8 +5,10 @@
   "title": "Local note store and editor",
   "summary": "IndexedDB-backed Note store and the in-browser editor that reads / writes it.",
   "approach": "Plain web components on top of a thin Promise-wrapped IndexedDB layer. No backend.",
+  "buildOrder": 1,
+  "executionStatus": "verified",
   "acIds": ["AC-100-1", "AC-100-2"],
-  "status": "verified",
+  "dependsOnFbsIds": [],
   "contextRequirements": {
     "prdSections": ["capture", "openData"],
     "tadSections": ["dataArchitecture"],

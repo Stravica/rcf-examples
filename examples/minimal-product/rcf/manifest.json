@@ -1,0 +1,8 @@
+{
+  "version": "2.0.0",
+  "projectName": "Minimal Notebook",
+  "description": "Smallest viable RCF tree. Only required fields populated. Demonstrates the floor.",
+  "prd": { "id": "PRD-001", "path": "prd.json" },
+  "tad": { "id": "TAD-001", "path": "tad.json" },
+  "bs":  { "id": "BS-001",  "path": "build-sequence.json" }
+}

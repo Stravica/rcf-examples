@@ -16,7 +16,7 @@ Both trees use the recommended `rcf/` folder layout from `@stravica/rcf-schemas/
 ```
 examples/<tree>/
 |-- rcf/
-|   |-- rcf-manifest.json
+|   |-- manifest.json
 |   |-- prd.json
 |   |-- requirements/
 |   |-- user-stories/
@@ -31,7 +31,12 @@ examples/<tree>/
 
 ## Schema validation
 
-Each tree validates clean against `@stravica/rcf-schemas@0.1.0`. Validation is performed in the schemas repo's own CI (see [Stravica/rcf-schemas](https://github.com/Stravica/rcf-schemas)); this repo's CI just confirms every JSON file parses.
+Each tree validates clean against the latest published RCF CLI (`@stravica-ai/rcf-build-lite`, which bundles the current `@stravica-ai/rcf-schemas`). Two CI jobs enforce this:
+
+- **`test`** — a fast, dependency-free check that every JSON file parses and every tree carries a `manifest.json`.
+- **`gallery-vs-published-cli`** — installs the *latest* published CLI and runs `rcf validate` and the `rcf view --strict` boot gate over every tree under `examples/`. A CLI or schema release that breaks the gallery turns this job red rather than ambushing users.
+
+To reproduce locally: `npm install -g @stravica-ai/rcf-build-lite@latest`, then from any tree directory run `rcf validate`.
 
 ## Conventions used in the comprehensive tree
 

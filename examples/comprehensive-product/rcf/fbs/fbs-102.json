@@ -5,15 +5,16 @@
   "title": "Conflict surfacing UI",
   "summary": "Conflict resolution UI shown when sync detects divergent edits.",
   "approach": "Render local and remote bodies side by side; user picks one or merges by hand and saves; sync replays the chosen version.",
+  "buildOrder": 3,
+  "executionStatus": "inProgress",
   "acIds": ["AC-101-3"],
-  "status": "inProgress",
+  "dependsOnFbsIds": ["FBS-101"],
   "contextRequirements": {
     "tadSections": ["systemOverview"],
     "tacIds": ["TAC-100"],
     "adrIds": ["ADR-100"],
     "existingModules": ["src/sync/index.js"]
   },
-  "dependencies": ["FBS-101"],
   "estimatedSize": "small",
   "estimatedHours": 4,
   "deliverables": [

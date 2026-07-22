@@ -1,9 +1,10 @@
 // Sanity test for the rcf-examples repo: every JSON file under examples/ must
 // parse as JSON, and every example tree must contain a manifest at its root.
 //
-// Schema validation against @stravica/rcf-schemas is performed in the schemas
-// repo's own CI (see Stravica/rcf-schemas), not here, to keep this repo from
-// taking a dependency on the schemas package during private development.
+// This is the fast, dependency-free parse + layout check. Full schema and
+// reference validation against the PUBLISHED CLI (@stravica-ai/rcf-build-lite)
+// runs in a separate CI job driven by test/validate-against-published-cli.mjs,
+// so a CLI/schema release that breaks the gallery turns the build red.
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -46,7 +47,7 @@ test('every example tree contains a manifest', async () => {
     .map((d) => d.name);
   assert.ok(trees.length >= 2, 'expected at least 2 example trees');
   for (const tree of trees) {
-    const manifestPath = join(EXAMPLES_DIR, tree, 'rcf', 'rcf-manifest.json');
+    const manifestPath = join(EXAMPLES_DIR, tree, 'rcf', 'manifest.json');
     try {
       const info = await stat(manifestPath);
       assert.ok(info.isFile(), `${manifestPath} is not a file`);
