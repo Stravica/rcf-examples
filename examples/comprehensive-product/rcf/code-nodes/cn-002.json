@@ -1,0 +1,12 @@
+{
+  "cnId": "CN-002",
+  "path": "src/notes/note-repository.js#listNotes",
+  "title": "Local note list (most-recent-first)",
+  "description": "Reads every locally stored note ordered by last update, the query that backs the note list a freshly saved note must appear in.",
+  "implementsAcIds": ["AC-100-1"],
+  "dependencies": [],
+  "version": "1.0.0",
+  "status": "approved",
+  "createdAt": "2026-05-02T09:00:00.000Z",
+  "updatedAt": "2026-05-02T09:00:00.000Z"
+}

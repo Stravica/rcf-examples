@@ -1,0 +1,12 @@
+{
+  "cnId": "CN-001",
+  "path": "src/notes/note-repository.js#saveNote",
+  "title": "Local note persistence (save verb)",
+  "description": "Writes a note to the offline-first IndexedDB store, assigning an id to new notes and marking the record dirty for the next sync flush. The write that makes a submitted note survive a reload.",
+  "implementsAcIds": ["AC-100-1"],
+  "dependencies": ["CN-010"],
+  "version": "1.0.0",
+  "status": "approved",
+  "createdAt": "2026-05-02T09:00:00.000Z",
+  "updatedAt": "2026-05-02T09:00:00.000Z"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "TS-102",
+  "usId": "US-102",
+  "title": "Full-text search over the corpus (e2e)",
+  "purpose": "Validate ranked free-text retrieval and the empty-query fallback against a representative multi-note corpus.",
+  "testLevel": "e2e",
+  "acIds": ["AC-102-1", "AC-102-2"],
+  "testCases": [
+    {
+      "id": "TC-102-ranked-results",
+      "acId": "AC-102-1",
+      "description": "A free-text query returns the relevant notes ranked by term frequency and excludes non-matching notes.",
+      "testPointer": "test/search/search-index.test.js::free-text query returns the most relevant notes first",
+      "status": "passing"
+    },
+    {
+      "id": "TC-102-empty-query-recent",
+      "acId": "AC-102-2",
+      "description": "An empty query returns the recent-notes fallback instead of an error or empty page.",
+      "testPointer": "test/search/search-index.test.js::empty query returns the recent-notes fallback",
+      "status": "passing"
+    },
+    {
+      "id": "TC-102-large-corpus-latency",
+      "acId": "AC-102-1",
+      "description": "Top-10 results return within 10 seconds over a 10000-note corpus (perf gate, not yet wired into CI).",
+      "status": "skipped"
+    }
+  ],
+  "status": "approved",
+  "createdAt": "2026-05-02T09:00:00.000Z",
+  "updatedAt": "2026-05-02T09:00:00.000Z"
+}

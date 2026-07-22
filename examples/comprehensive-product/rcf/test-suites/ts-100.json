@@ -1,0 +1,33 @@
+{
+  "id": "TS-100",
+  "usId": "US-100",
+  "title": "Create and save a markdown note (unit)",
+  "purpose": "Prove the local persistence and lossless-markdown paths in isolation, without a browser or a real IndexedDB, using the in-memory shim.",
+  "testLevel": "unit",
+  "acIds": ["AC-100-1", "AC-100-2"],
+  "testCases": [
+    {
+      "id": "TC-100-persists-a-new-note",
+      "acId": "AC-100-1",
+      "description": "Saving a new note assigns an id and the note is readable back with the same body.",
+      "testPointer": "test/notes/note-repository.test.js::saves a new note and reads it back",
+      "status": "passing"
+    },
+    {
+      "id": "TC-100-empty-note-rejected",
+      "acId": "AC-100-1",
+      "description": "Saving an empty editor creates no note and surfaces a validation message.",
+      "status": "pending"
+    },
+    {
+      "id": "TC-100-markdown-verbatim",
+      "acId": "AC-100-2",
+      "description": "Headings, lists, fenced code blocks, and wiki-links survive a serialize/parse round trip byte-for-byte.",
+      "testPointer": "test/notes/note-repository.test.js::preserves markdown constructs byte-for-byte",
+      "status": "passing"
+    }
+  ],
+  "status": "approved",
+  "createdAt": "2026-05-02T09:00:00.000Z",
+  "updatedAt": "2026-05-02T09:00:00.000Z"
+}

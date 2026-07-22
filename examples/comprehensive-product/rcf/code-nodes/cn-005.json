@@ -1,0 +1,12 @@
+{
+  "cnId": "CN-005",
+  "path": "src/sync/sync-engine.js#pushChanges",
+  "title": "Push pending offline edits on reconnect",
+  "description": "Carries locally dirty notes to the remote when connectivity allows; a transport failure leaves the notes pending rather than throwing, so an offline edit is never lost.",
+  "implementsAcIds": ["AC-101-1", "AC-101-2"],
+  "dependencies": ["CN-001"],
+  "version": "1.0.0",
+  "status": "approved",
+  "createdAt": "2026-05-02T09:00:00.000Z",
+  "updatedAt": "2026-05-02T09:00:00.000Z"
+}
