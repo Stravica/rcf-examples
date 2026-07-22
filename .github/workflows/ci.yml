@@ -20,3 +20,20 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
+
+  # Guard: validate every example tree against the LATEST published rcf CLI.
+  # A CLI or schema release that breaks the gallery turns this job red instead
+  # of ambushing the next user who clones the repo and runs the published CLI.
+  gallery-vs-published-cli:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24
+      - name: Install published rcf CLI
+        run: npm install -g @stravica-ai/rcf-build-lite@latest
+      - name: Report CLI version under test
+        run: rcf --version
+      - name: Validate every example tree against the published CLI
+        run: node test/validate-against-published-cli.mjs

@@ -34,7 +34,6 @@
     "Apache 2.0 license",
     "Server-side runtime limited to Cloudflare Workers (cost ceiling)"
   ],
-  "requirementIds": ["REQ-100", "REQ-101", "REQ-102"],
   "createdAt": "2026-01-01T00:00:00Z",
   "updatedAt": "2026-05-01T12:00:00Z"
 }

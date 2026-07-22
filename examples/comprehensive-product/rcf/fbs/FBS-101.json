@@ -5,8 +5,10 @@
   "title": "Sync Worker push endpoint",
   "summary": "Cloudflare Worker /sync/push endpoint that accepts a batch of client deltas and writes them to R2.",
   "approach": "Stateless Worker; deltas are appended as versioned objects in R2 keyed by user id and timestamp. Concurrency handled by R2's strong consistency on PUT-if-match.",
+  "buildOrder": 2,
+  "executionStatus": "complete",
   "acIds": ["AC-101-1", "AC-101-2"],
-  "status": "complete",
+  "dependsOnFbsIds": ["FBS-100"],
   "contextRequirements": {
     "prdSections": ["sync", "offline"],
     "tadSections": ["integrationArchitecture", "operationalConcerns"],
@@ -17,7 +19,6 @@
     "externalDocs": ["https://developers.cloudflare.com/r2/"],
     "other": ["See FBS-100 for the local-store work."]
   },
-  "dependencies": ["FBS-100"],
   "estimatedSize": "medium",
   "estimatedHours": 6,
   "deliverables": [

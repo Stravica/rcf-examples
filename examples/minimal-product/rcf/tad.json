@@ -9,8 +9,6 @@
     "architecturalApproach": "Single static page; persistence via localStorage.",
     "keyCapabilities": ["Capture", "Persist"]
   },
-  "componentIds": ["TAC-001"],
-  "architecturalDecisionIds": ["ADR-001"],
   "createdAt": "2026-01-01T00:00:00Z",
   "updatedAt": "2026-01-01T00:00:00Z"
 }

@@ -14,8 +14,6 @@
       "Full-text search"
     ]
   },
-  "componentIds": ["TAC-100", "TAC-101", "TAC-102"],
-  "architecturalDecisionIds": ["ADR-100", "ADR-101", "ADR-102", "ADR-103"],
   "architecturePrinciples": [
     {
       "name": "Local-first",
