@@ -32,7 +32,7 @@ jobs:
         with:
           node-version: 24
       - name: Install published rcf CLI
-        run: npm install -g @stravica-ai/rcf-build-lite@latest
+        run: npm install -g rcf-lite@latest
       - name: Report CLI version under test
         run: rcf --version
       - name: Validate every example tree against the published CLI
