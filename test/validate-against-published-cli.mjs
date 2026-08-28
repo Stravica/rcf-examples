@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 // Gallery-vs-CLI compatibility guard.
 //
-// Runs the PUBLISHED rcf CLI (@stravica-ai/rcf-build-lite) over every example
-// tree under examples/ and fails if any tree is not clean. This is the guard
-// that turns a CLI/schema release which breaks the gallery into a red build
-// instead of an ambush for the next user who clones the repo.
+// Runs the PUBLISHED rcf CLI (rcf-lite) over every example tree under
+// examples/ and fails if any tree is not clean. This is the guard that turns
+// a CLI/schema release which breaks the gallery into a red build instead of
+// an ambush for the next user who clones the repo.
 //
 // For each tree (a directory under examples/ that contains rcf/manifest.json):
-//   1. `rcf validate`            -> must exit 0 (clean schema + references).
-//   2. `rcf view --strict`       -> boot gate; must NOT exit 3. The strict gate
+//   1. `rcf define validate`     -> must exit 0 (clean schema + references).
+//   2. `rcf audit view --strict` -> boot gate; must NOT exit 3. The strict gate
 //                                   walks the tree once on boot and exits 3 on
 //                                   structural errors, otherwise it holds the
 //                                   HTTP listener open. We start it headless,
@@ -69,7 +69,7 @@ function run(args, cwd, extraEnv = {}) {
 // Pass = it never exited with 3 (or any error) before we killed it.
 function runStrictGate(cwd) {
   return new Promise((resolve) => {
-    const child = spawn(RCF_BIN, ['view', '--strict', '--no-open', '--port', '4399'], {
+    const child = spawn(RCF_BIN, ['audit', 'view', '--strict', '--no-open', '--port', '4399'], {
       cwd,
       env: { ...process.env, CI: '1' },
       stdio: ['ignore', 'pipe', 'pipe'],
@@ -115,7 +115,7 @@ async function main() {
   for (const tree of trees) {
     console.log(`## ${tree.name}`);
 
-    const validate = await run(['validate'], tree.dir);
+    const validate = await run(['define', 'validate'], tree.dir);
     if (validate.code === 0) {
       console.log('  validate      OK');
     } else {
