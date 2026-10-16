@@ -23,7 +23,7 @@ Every build spec, fix or story runs all five stages, in order, one hand per stag
 - If Finalise fails for a tooling reason, that is an ESCALATE to the operator, never a skip. The exit code and stderr go with it verbatim; "cannot run" is never recorded and moved past.
 - No later spec on the same example enters Build until every merged spec is `verified` (`executionStatus` in `examples/<name>/rcf/fbs/*.json`).
 - Test-stage prerequisites (hosts, accounts, sandboxes, credential names) come from the operational notes the stage-keeper supplies, kept outside this repo. The notes carry names, never values; never commit a key, token or password here.
-- The five RCF verbs are define, build, verify, release and audit. The fifth is audit, not attest.
+- The five RCF verbs are discover, define, build, verify and audit. The fifth is audit, not attest.
 - Runbook commands: `rcf build bundle --next` (the next spec bundle and its five-stage runbook), `rcf define validate` (before acting on the tree and after any edit to it), `rcf audit coverage --strict` (the Define and Build exits).
 
 Source: the RCF five-stage separation standard (2026-10-16).
