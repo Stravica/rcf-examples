@@ -13,7 +13,7 @@
   ],
   "internalStructure": "D1 schema with notes_fts virtual table; ingest worker subscribes to sync events.",
   "interfaces": [
-    { "name": "GET /search", "kind": "http-json", "description": "Returns paged search results for a free-text query." }
+    { "name": "GET /search", "kind": "httpRoute", "description": "Returns paged search results for a free-text query (legacy kind: http-json)." }
   ],
   "dependencies": [
     { "name": "Sync Worker", "kind": "tac", "tacId": "TAC-100", "description": "Source of change notifications." },

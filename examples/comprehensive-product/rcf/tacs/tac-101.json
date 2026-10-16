@@ -12,8 +12,8 @@
   ],
   "internalStructure": "Adapter module with a single R2 client; pure functions for serialise / deserialise.",
   "interfaces": [
-    { "name": "putNote(note, expectedETag)", "kind": "internal-function", "description": "Writes a note with optimistic concurrency." },
-    { "name": "getNote(id)", "kind": "internal-function", "description": "Reads the latest version of a note." }
+    { "name": "putNote(note, expectedETag)", "kind": "other", "description": "Writes a note with optimistic concurrency (legacy kind: internal-function)." },
+    { "name": "getNote(id)", "kind": "other", "description": "Reads the latest version of a note (legacy kind: internal-function)." }
   ],
   "dependencies": [
     { "name": "Cloudflare R2", "kind": "external", "description": "Underlying blob store." }

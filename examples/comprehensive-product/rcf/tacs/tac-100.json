@@ -14,10 +14,10 @@
   ],
   "internalStructure": "Single Worker entrypoint dispatching to /push, /pull, /conflict handlers. Internal modules: deltaParser, conflictDetector, r2Adapter, ftsNotifier.",
   "interfaces": [
-    { "name": "POST /sync/push", "kind": "http-json", "description": "Accepts a batch of pending deltas." },
-    { "name": "GET /sync/pull", "kind": "http-json", "description": "Returns deltas the client has not yet seen." },
-    { "name": "POST /sync/resolve", "kind": "http-json", "description": "Submits the user's conflict resolution." },
-    { "name": "syncMetrics", "kind": "internal-event-stream", "description": "Per-batch latency and conflict count published to the metrics sink." }
+    { "name": "POST /sync/push", "kind": "httpRoute", "description": "Accepts a batch of pending deltas (legacy kind: http-json)." },
+    { "name": "GET /sync/pull", "kind": "httpRoute", "description": "Returns deltas the client has not yet seen (legacy kind: http-json)." },
+    { "name": "POST /sync/resolve", "kind": "httpRoute", "description": "Submits the user's conflict resolution (legacy kind: http-json)." },
+    { "name": "syncMetrics", "kind": "event", "description": "Per-batch latency and conflict count published to the metrics sink (legacy kind: internal-event-stream)." }
   ],
   "dependencies": [
     { "name": "Object store", "kind": "tac", "tacId": "TAC-101", "description": "Persists note bodies." },
